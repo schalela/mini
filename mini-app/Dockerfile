@@ -1,21 +1,17 @@
 # Create the builder image using 10.12.0-alpine
 FROM node:10.12.0-alpine AS builder
 
-# Define working directory to build the sources
 RUN mkdir app/
 WORKDIR app/
 
-# Copy every file in the project to the builder image
 COPY . .
 
-# Install dependencies, devDependencies and build the application
 RUN yarn
 RUN yarn build
 
 # Create the release image using 10.12.0-alpine
 FROM node:10.12.0-alpine
 
-# Define working directory to host the distributables
 RUN mkdir app/
 WORKDIR app/
 
@@ -24,14 +20,11 @@ COPY package.json yarn.lock* ./
 # Install dependencies (exclude devDependencies)
 RUN yarn install --production=true
 
-# Copy the dist folder from the builder image to the release image
-COPY --from=builder /www/dist ./dist
+COPY --from=builder /app/frontend/.next ./frontend/.next
+COPY --from=builder /app/server ./server
 
-# Expose port 3030
 EXPOSE 3000
 
-# Set the node_environment to production
 ENV NODE_ENV=production
 
-# Serve the application using node
 CMD yarn start
