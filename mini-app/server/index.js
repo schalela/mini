@@ -6,6 +6,8 @@ const dev = process.env.NODE_ENV !== 'production'
 const nextApp = next({ dir: './frontend', dev })
 const handle = nextApp.getRequestHandler()
 
+const ProfilesAPI = require('./services/profiles');
+
 const typeDefs = gql`
   type Query {
     profiles: [String]
@@ -14,14 +16,29 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    profiles: () => ['Profile 1', 'Profile 2', 'Profile 3'],
+    profiles: async (_source, { id }, { dataSources }) => {
+      return dataSources.profilesAPI.getProfiles();
+    }
   },
 };
 
 nextApp.prepare()
   .then(() => {
     const app = express();
-    const server = new ApolloServer({ typeDefs, resolvers });
+    const server = new ApolloServer({
+      typeDefs,
+      resolvers,
+      dataSources: () => {
+        return {
+          profilesAPI: new ProfilesAPI()
+        };
+      },
+      context: () => {
+        return {
+          token: 'token2',
+        };
+      }
+    });
 
     app.get('*', (req, res) => {
       return handle(req, res);

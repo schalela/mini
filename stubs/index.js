@@ -45,4 +45,16 @@ server.post('/init/auth', (req, res) => {
   });
 });
 
+server.get('/v1/idp/user/profiles', (req, res) => {
+  const accessToken = req.headers["x-nab-accesstoken"];
+  const caller = db.users.find(user => user.token === accessToken);
+  if (!caller || caller.email !== db.currentUser) {
+    return res.status(401).jsonp({});
+  }
+
+  return res.status(200).jsonp({
+    data: caller.profiles
+  });
+});
+
 server.listen(port);

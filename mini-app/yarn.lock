@@ -1181,6 +1181,17 @@ apollo-client@^2.4.6:
   optionalDependencies:
     "@types/async" "2.0.50"
 
+apollo-datasource-rest@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.2.0.tgz#96acf17d41a8c1db8a35d5248564bb6ff89e264c"
+  integrity sha512-bnRp1CrrV4hOpjJtFjXRAb0Cmy/z1FjakS39pcxOOn0RDBBXtS8VreoiDzeJKKL6lHoBFUFVABHj/+Cq3j+RyA==
+  dependencies:
+    apollo-datasource "0.2.0"
+    apollo-server-caching "0.2.0"
+    apollo-server-env "2.2.0"
+    apollo-server-errors "2.2.0"
+    http-cache-semantics "^4.0.0"
+
 apollo-datasource@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/apollo-datasource/-/apollo-datasource-0.2.0.tgz#ea28313689073150b18f0dbe35bedffc86a62b57"
@@ -2927,6 +2938,11 @@ htmlescape@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/htmlescape/-/htmlescape-1.1.1.tgz#3a03edc2214bca3b66424a3e7959349509cb0351"
   integrity sha1-OgPtwiFLyjtmQko+eVk0lQnLA1E=
+
+http-cache-semantics@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.0.0.tgz#2d0069a73c36c80e3297bc3a0cadd669b78a69ce"
+  integrity sha512-NtexGRtaV5z3ZUX78W9UDTOJPBdpqms6RmwQXmOhHws7CuQK3cqIoQtnmeqi1VvVD6u6eMMRL0sKE9BCZXTDWQ==
 
 http-errors@1.6.2:
   version "1.6.2"
