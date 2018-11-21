@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const GET_PROFILES = gql`
   {
     profiles
   }
-`;
+`
 
 export default () => (
   <Query query={GET_PROFILES}>

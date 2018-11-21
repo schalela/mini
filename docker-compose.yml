@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+  app:
+    build: ./mini-app
+    image: mini-app:latest
+    container_name: 'mini-app'
+    depends_on:
+      - stubs
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      API_URL: http://stubs:8000
+    ports:
+      - 3000:3000 # for development
+
+  stubs:
+    build: ./stubs
+    image: mini-app-stubs:latest
+    container_name: 'mini-app-stubs'
+    restart: always
+    environment:
+      PORT: 8000
+    ports:
+      - 8000:8000 # for development
