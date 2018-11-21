@@ -5,7 +5,8 @@
   "author": "Samuel Chalela <samuel.chalela@thoughtworks.com>",
   "license": "MIT",
   "scripts": {
-    "fix": "standard --fix --parser babel-eslint"
+    "fix": "standard --fix --parser babel-eslint",
+    "start": "docker-compose up"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
