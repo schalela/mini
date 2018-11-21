@@ -1,0 +1,35 @@
+{
+  "currentUser": "",
+  "users": [
+    {
+      "email": "test1@example.com",
+      "password": "password",
+      "token": "token1",
+      "profiles": [
+        "Profile 1",
+        "Profile 2",
+        "Profile 3"
+      ]
+    },
+    {
+      "email": "test2@example.com",
+      "password": "password",
+      "token": "token2",
+      "profiles": [
+        "Profile 4",
+        "Profile 5",
+        "Profile 6"
+      ]
+    },
+    {
+      "email": "test3@example.com",
+      "password": "password",
+      "token": "token3",
+      "profiles": [
+        "Profile 7",
+        "Profile 8",
+        "Profile 9"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "mini-app",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "next build ./frontend",
+    "start": "node ./server/index.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.2.2",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "next": "^7.0.2",
+    "apollo-boost": "^0.1.21",
+    "isomorphic-unfetch": "^3.0.0",
+    "react": "^16.6.3",
+    "react-apollo": "^2.3.1",
+    "react-dom": "^16.6.3"
+  }
+}
